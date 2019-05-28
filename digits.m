@@ -1,13 +1,18 @@
 function cmap = digits(varargin)
 
 
-if ~nargin
-    ncols = 256;
-    phases = 5;
-else
-    ncols = varargin{1};
-    phases = varargin{2};
+switch nargin
+    case 0
+        ncols = varargin{1};
+        phases = varargin{2};
+    case 1
+        ncols = varargin{1};
+        phases = 5;
+    case 2
+        ncols = 256;
+        phases = 5;
 end
+
 
 % cmaptemp = [1 1 0; 0 1 0; 0 1 1; 0 0 1; 1 0 1];
 tmp = hsv(256);
